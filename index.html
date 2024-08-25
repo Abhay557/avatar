@@ -3,81 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overlapped Image Containers with Different Folders</title>
+    <title>Dynamic Image Slideshow</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        .image-container {
+        .container {
             position: relative;
             width: 400px;
             height: 400px;
-            margin: 20px;
+            margin: 50px auto;
             border: 2px solid #000;
-            background-color: #fff;
+            overflow: hidden;
         }
-        .image-container div {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-        .image-container img {
+        .container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: none;
         }
-        .buttons-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .buttons-container button {
-            margin: 0 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #333;
-            color: white;
+        .button {
             border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            color: white;
+            padding: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 4px 2px;
+            cursor: pointer;
         }
-        .buttons-container button:hover {
-            background-color: #555;
+        .black-button {
+            background-color: #000;
+        }
+        .display-container {
+            position: relative;
+        }
+        .display-left, .display-right {
+            top: 50%;
+            transform: translateY(-50%);
+            position: absolute;
+            padding: 16px;
+            cursor: pointer;
+        }
+        .display-left {
+            left: 0;
+        }
+        .display-right {
+            right: 0;
         }
     </style>
 </head>
 <body>
 
-<h2>Manual Image Changer with Different Folders</h2>
+<h2 class="centered-text">Dynamic Image Slideshow</h2>
 
-<div class="image-container" id="container1"></div>
-<div class="image-container" id="container2"></div>
-<div class="image-container" id="container3"></div>
-<div class="image-container" id="container4"></div>
+<div id="container1" class="container"></div>
+<div id="container2" class="container"></div>
+<div id="container3" class="container"></div>
+<div id="container4" class="container"></div>
 
-<div class="buttons-container">
-    <button onclick="changeImage(1)">Change Image 1</button>
-    <button onclick="changeImage(2)">Change Image 2</button>
-    <button onclick="changeImage(3)">Change Image 3</button>
-    <button onclick="changeImage(4)">Change Image 4</button>
-</div>
+<button class="button black-button display-left" onclick="changeImage(1)">&#10094; Container 1</button>
+<button class="button black-button display-right" onclick="changeImage(1)">&#10095; Container 1</button>
+<!-- Repeat buttons for other containers as needed -->
 
 <script>
-// Configuration of image folders and number of images
 const config = {
-    container1: { folder: "hair"},
-    container2: { folder: "eyes"},
+    container1: { folder: "hair" },
+    container2: { folder: "eyes" },
     container3: { folder: "body" },
     container4: { folder: "cloths" }
 };
+
 // Load images dynamically for each container
 window.onload = function() {
     for (let container in config) {
@@ -99,7 +93,7 @@ window.onload = function() {
 
             if (imageExists) {
                 if (imageIndex === 1) {
-                    img.style.display = "block";
+                    img.style.display = "block"; // Show the first image
                 }
                 containerDiv.appendChild(img);
             }
@@ -109,7 +103,7 @@ window.onload = function() {
     }
 };
 
-// Function to change images
+// Function to change images in a specific container
 function changeImage(containerNumber) {
     const container = `container${containerNumber}`;
     const slides = document.getElementsByClassName(`mySlides${container}`);
@@ -122,7 +116,6 @@ function changeImage(containerNumber) {
         }
     }
 }
-
 </script>
 
 </body>
