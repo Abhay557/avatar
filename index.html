@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overlapped Images Example</title>
+  <style>
+    .image-container {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      margin: 20px auto;
+      border: 2px solid #ccc;
+      overflow: hidden;
+    }
+    
+    .image-container img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .buttons button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="image-container">
+    <img id="image1" src="https://via.placeholder.com/400x300/ff7f7f/333333?text=Image+1" alt="Image 1">
+    <img id="image2" src="https://via.placeholder.com/400x300/7fbfff/333333?text=Image+2" alt="Image 2">
+    <img id="image3" src="https://via.placeholder.com/400x300/7fff7f/333333?text=Image+3" alt="Image 3">
+    <img id="image4" src="https://via.placeholder.com/400x300/ffff7f/333333?text=Image+4" alt="Image 4">
+  </div>
+
+  <div class="buttons">
+    <button onclick="changeFirstImage()">Change First Image</button>
+  </div>
+
+  <script>
+    function changeFirstImage() {
+      const image1 = document.getElementById('image1');
+      image1.src = 'https://via.placeholder.com/400x300/ff7fff/333333?text=New+Image';
+    }
+  </script>
+
+</body>
+</html>
