@@ -73,26 +73,38 @@
 <script>
 // Configuration of image folders and number of images
 const config = {
-    container1: { folder: "hair", totalImages: 65 },
-    container2: { folder: "eyes", totalImages: 65 },
-    container3: { folder: "body", totalImages: 65 },
-    container4: { folder: "cloths", totalImages: 65 }
+    container1: { folder: "hair"},
+    container2: { folder: "eyes"},
+    container3: { folder: "body" },
+    container4: { folder: "cloths" }
 };
-
 // Load images dynamically for each container
 window.onload = function() {
     for (let container in config) {
         let containerDiv = document.getElementById(container);
-        let { folder, totalImages } = config[container];
-        
-        for (let i = 1; i <= totalImages; i++) {
+        let { folder } = config[container];
+
+        let imageIndex = 1;
+        let imageExists = true;
+
+        while (imageExists) {
             let img = document.createElement('img');
-            img.src = `${folder}/image${i}.jpg`; // Adjust the image name and extension as needed
+            img.src = `${folder}/image${imageIndex}.jpg`; // Adjust the image name and extension as needed
             img.classList.add(`mySlides${container}`);
-            if (i === 1) {
-                img.style.display = "block";
+
+            img.onerror = function() {
+                imageExists = false;
+                img.remove(); // Remove broken image element if it doesn't exist
+            };
+
+            if (imageExists) {
+                if (imageIndex === 1) {
+                    img.style.display = "block";
+                }
+                containerDiv.appendChild(img);
             }
-            containerDiv.appendChild(img);
+
+            imageIndex++;
         }
     }
 };
@@ -110,6 +122,7 @@ function changeImage(containerNumber) {
         }
     }
 }
+
 </script>
 
 </body>
