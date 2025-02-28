@@ -1,8 +1,0 @@
-{
-  "layers": {
-    "layer1": ["layer1/img1.png", "layer1/img2.png", "layer1/img3.png", "layer1/img4.png", "layer1/img5.png", "layer1/img6.png", "layer1/img7.png", "layer1/img8.png", "layer1/img9.png", "layer1/img10.png"],
-    "layer2": ["layer2/img1.png", "layer2/img2.png", "layer2/img3.png", "layer2/img4.png", "layer2/img5.png", "layer2/img6.png", "layer2/img7.png", "layer2/img8.png", "layer2/img9.png", "layer2/img10.png"],
-    "layer3": ["layer3/img1.png", "layer3/img2.png", "layer3/img3.png", "layer3/img4.png", "layer3/img5.png", "layer3/img6.png", "layer3/img7.png", "layer3/img8.png", "layer3/img9.png", "layer3/img10.png"],
-    "layer4": ["layer4/img1.png", "layer4/img2.png", "layer4/img3.png", "layer4/img4.png", "layer4/img5.png", "layer4/img6.png", "layer4/img7.png", "layer4/img8.png", "layer4/img9.png", "layer4/img10.png"]
-  }
-}
