@@ -5,6 +5,7 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: #f4f4f4;
+    gap: 15px;
 }
 
 .avatar-container {
