@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="avatar-container">
+        <img id="layer1" class="avatar-layer" src="layer1/img1.png" alt="Layer 1">
+        <img id="layer2" class="avatar-layer" src="layer2/img1.png" alt="Layer 2">
+        <img id="layer3" class="avatar-layer" src="layer3/img1.png" alt="Layer 3">
+        <img id="layer4" class="avatar-layer" src="layer4/img1.png" alt="Layer 4">
+    </div>
+
+    <div class="controls">
+        <div class="btn-group">
+            <button onclick="changeLayer('layer1', -1)">◀</button>
+            <button onclick="changeLayer('layer1', 1)">▶</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="changeLayer('layer2', -1)">◀</button>
+            <button onclick="changeLayer('layer2', 1)">▶</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="changeLayer('layer3', -1)">◀</button>
+            <button onclick="changeLayer('layer3', 1)">▶</button>
+        </div>
+        <div class="btn-group">
+            <button onclick="changeLayer('layer4', -1)">◀</button>
+            <button onclick="changeLayer('layer4', 1)">▶</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
