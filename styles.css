@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.avatar-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.avatar-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 5px;
+    margin: 0 10px;
+}
+
+button {
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
