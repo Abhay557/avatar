@@ -1,20 +1,20 @@
-# Avatar Maker 🎨👤  
+# Avatar Maker 
 
 A web-based avatar maker where four overlapping image layers (`body`, `eyes`, `hair`, `cloths`) create a full avatar. Users can change each layer using navigation buttons or generate a random avatar.
 
-## ✨ Features  
+##  Features  
 - Layer-based avatar customization  
 - 8 navigation buttons to change layers  
 - 🎲 **Randomize Avatar** button to create a unique look instantly  
 - Uses assets from **Raid Heroes: Total War**  
 - Live preview: [Click Here](https://abhay557.github.io/avatar/)
 
-## 🚀 How to Use  
+##  How to Use  
 1. Open `index.html` in a browser.  
 2. Click the **left/right buttons** to change each layer.  
 3. Click **🎲 Randomize Avatar** to generate a unique look instantly!  
 
-## 🔢 Total Avatar Combinations  
+##  Total Avatar Combinations  
 With all layers combined, there are **143,360 possible avatar combinations!**  
 
 ## 🛠️ Technologies Used  
@@ -22,7 +22,7 @@ With all layers combined, there are **143,360 possible avatar combinations!**
 - CSS  
 - JavaScript  
 
-## 📂 Code Structure  
+##  Code Structure  
 ```
 /avatar-maker
 │── index.html    # The main UI with image layers & buttons
@@ -36,8 +36,8 @@ With all layers combined, there are **143,360 possible avatar combinations!**
 
 ---  
 
-## 💡 How the Code Works  
-### **1️⃣ JavaScript Logic (script.js)**  
+##  How the Code Works  
+### **1️ JavaScript Logic (script.js)**  
 The core logic is handled by JavaScript, where each layer has a predefined **number of images**, and the user can switch between them.  
 
 ```js
@@ -47,7 +47,7 @@ let currentIndexes = { body: 0, eyes: 0, hair: 0, cloths: 0 };
 - `imageCounts` → Stores the total images available for each layer.  
 - `currentIndexes` → Keeps track of the **current image index** for each layer.  
 
-#### **2️⃣ Image Switching (`changeLayer`)**  
+#### **2️ Image Switching (`changeLayer`)**  
 ```js
 function changeLayer(layer, direction) {
     let maxImages = imageCounts[layer];
@@ -59,7 +59,7 @@ function changeLayer(layer, direction) {
 - Uses **modulus (`%`) arithmetic** to wrap around when reaching the first/last image.  
 - Calls `updateImage(layer)`, which updates the `<img>` tag source dynamically.  
 
-#### **3️⃣ Updating the Image Source (`updateImage`)**  
+#### **3️ Updating the Image Source (`updateImage`)**  
 ```js
 function updateImage(layer) {
     let newImagePath = `${layer}/${currentIndexes[layer]}.png`;
@@ -69,7 +69,7 @@ function updateImage(layer) {
 - Constructs the correct image path based on `layer` and `currentIndexes[layer]`.  
 - Updates the `src` attribute of the `<img>` element for that layer.  
 
-#### **4️⃣ Random Avatar Generation (`randomizeAvatar`)**  
+#### **4️ Random Avatar Generation (`randomizeAvatar`)**  
 ```js
 function randomizeAvatar() {
     for (let layer in imageCounts) {
@@ -82,11 +82,11 @@ function randomizeAvatar() {
 - Randomly picks an image for each layer using `Math.random()`.  
 - Calls `updateImage(layer)` to update the avatar.  
 
-## 🎮 Image Assets  
+##  Image Assets  
 - **Game:** Raid Heroes: Total War  
 - *All assets belong to their respective owners.*
 
-## 🚀 Want to Contribute?  
+##  Want to Contribute?  
 1. Fork this repo: [https://github.com/Abhay557/avatar](https://github.com/Abhay557/avatar)  
 2. Clone it:  
    ```sh
@@ -99,7 +99,7 @@ function randomizeAvatar() {
    git push origin main
    ``` 
 
-## 📜 License  
+##  License  
 This project is open-source under the [MIT License](LICENSE).
 
 
